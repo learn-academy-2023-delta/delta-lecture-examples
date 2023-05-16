@@ -128,3 +128,39 @@ console.log(typeof true) // boolean
 // .sort((a, b) => a - b) - higher order function
 
 
+// Create a function that takes in two arrays and returns one array with no duplicates (and is only a string)
+
+const array1 = ["hi", 3, 90, 5, true, 3, "hello"]
+const array2 = [85, 45, 90, 3, true, "hi"]
+
+// Psuedocode
+// 1. Create a function called noDuplicates takes in two arrays (firstArr, secondArr)
+// 2. Use concat to join arrays together ["hi", 3, 90, 5, true, 3, "hello", 85, 45, 90, 3, true, "hi"]
+// 3. Use filter to iterate over the concated array
+  // a. Use indexOf which gives the postition of the first occurence of a value in a string
+  // b. Check against the current index
+
+// const noDuplicates = (firstArr, secondArr) => {
+//   return firstArr.concat(secondArr).filter((value, index, array) => {
+//     return array.indexOf(value) === index
+//   })
+// }
+
+const noDuplicates = (firstArr, secondArr) => {
+  let concatedArray = firstArr.concat(secondArr)
+  return concatedArray.filter((value, index, array) => {
+    return typeof value === "string" && array.indexOf(value) === index
+  })
+}
+
+console.log(noDuplicates(array1, array2)) // [ 'hi', 3, 90, 5, true, 'hello', 85, 45 ]
+
+
+// value = array[i]
+// index = i
+
+
+// ["hi", 3, 90, 5, true, 3, "hello", 85, 45, 90, 3, true, "hi"]
+
+// array.indexOf("hi") === 0
+// index === 12
