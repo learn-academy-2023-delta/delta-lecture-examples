@@ -89,7 +89,33 @@ describe("answer", () => {
   })
 
  
+  // const becomeADeveloper = (array, string) => {
+  //   return array.push(string)
+  // }
+
+  // Fail
+  // Expected: ["take notes", "practice", "being punctual", "study", "ask questions"]
+  // Received: 5
+  // .push will return the length of the array when adding that element into it 
+
+  // const becomeADeveloper = (array, string) => {
+  //   array.push(string)
+  //    return array
+  // }
+
+  // This will pass but we can also REFACTOR
+
   const becomeADeveloper = (array, string) => {
     return array.concat(string)
   }
 
+//   PASS  ./javascript-jest.test.js
+//   greeter
+//     ✓ returns a string that says 'Hi Delta 2023!' (1 ms)
+//   answer
+//     ✓ returns help others or ask questions based on input
+//   becomeADeveloper
+//     ✓ adds ask questions to the end of an array
+
+// Test Suites: 1 passed, 1 total
+// Tests:       3 passed, 3 total
